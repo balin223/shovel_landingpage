@@ -79,41 +79,6 @@ const NavLink = styled.a`
   }
 `;
 
-const ActionButtons = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.md};
-`;
-
-const ActionButton = styled.button<{ primary?: boolean }>`
-  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
-  border-radius: ${({ theme }) => theme.borderRadius.xl};
-  font-weight: 500;
-  transition: all ${({ theme }) => theme.transitions.fast};
-  
-  ${({ theme, primary }) => primary ? `
-    background: ${theme.colors.gradientPrimary};
-    color: ${theme.colors.textPrimary};
-    
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: ${theme.shadows.glow};
-    }
-  ` : `
-    color: ${theme.colors.textPrimary};
-    border: 1px solid ${theme.colors.border};
-    
-    &:hover {
-      background: ${theme.colors.cardHover};
-      border-color: ${theme.colors.accent};
-    }
-  `}
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: ${({ primary }) => primary ? 'none' : 'block'};
-  }
-`;
-
 const MobileMenuButton = styled.button`
   display: none;
   background: transparent;
@@ -204,7 +169,10 @@ const Navbar: React.FC = () => {
       <Overlay $isOpen={isMenuOpen} onClick={toggleMenu} />
       
       <NavLinks $isOpen={isMenuOpen}>
+        <NavLink href="#features">Features</NavLink>
         <NavLink href="#how-it-works">How it Works</NavLink>
+        <NavLink href="#pricing">Pricing</NavLink>
+        <NavLink href="#about" className="active">About AI</NavLink>
         <NavLink href="#contact">Contact</NavLink>
       </NavLinks>
     </NavContainer>

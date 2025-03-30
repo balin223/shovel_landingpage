@@ -73,17 +73,6 @@ const HeroDescription = styled.p`
   }
 `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.md};
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-  }
-`;
-
 const Button = styled.button<{ $primary?: boolean }>`
   padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.xl}`};
   border-radius: ${({ theme }) => theme.borderRadius.xl};
